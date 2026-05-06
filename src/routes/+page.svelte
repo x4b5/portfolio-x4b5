@@ -1,23 +1,70 @@
 <script lang="ts">
+	type TechItem = { label: string; value: string };
+
 	type Project = {
 		name: string;
 		url: string;
 		description: string;
 		updatedAt: string;
-		tech: string[];
+		tech: TechItem[];
 	};
 
 	const projects: Project[] = [
-		{ name: 'AI Wegwijzer', url: 'https://ai-wegwijzer.vercel.app', description: 'Informatieplatform over kunstmatige intelligentie', updatedAt: '2026-04-12', tech: ['SvelteKit', 'TypeScript', 'OpenAI API', 'Vercel'] },
-		{ name: 'Baannana', url: 'https://baannana.vercel.app', description: 'Educatief platform voor docenten en trainers', updatedAt: '2026-05-03', tech: ['SvelteKit', 'TypeScript', 'Vercel'] },
-		{ name: 'Babl', url: 'https://babl-xaviers-projects-f781c2fc.vercel.app', description: 'Conversatie-app', updatedAt: '2026-03-25', tech: ['SvelteKit', 'TypeScript', 'Vercel'] },
-		{ name: 'Blink', url: 'https://blink-app-mu.vercel.app', description: 'Talentontdekkingsapp', updatedAt: '2026-02-28', tech: ['SvelteKit', 'TypeScript', 'Vercel'] },
-		{ name: 'De Grote MS Quiz', url: 'https://ms-eight-olive.vercel.app', description: 'Experimenteel project', updatedAt: '2026-02-22', tech: ['SvelteKit', 'TypeScript', 'Vercel'] },
-		{ name: 'PII Scrubber', url: 'https://pii-scrubber-wheat.vercel.app', description: 'Verwijdert persoonsgegevens uit teksten', updatedAt: '2026-04-16', tech: ['SvelteKit', 'TypeScript', 'NLP', 'Vercel'] },
-		{ name: 'Quacker', url: 'https://quacker-omega.vercel.app', description: 'Blogs, naslagwerken, cartoons en AI-tools', updatedAt: '2025-11-04', tech: ['SvelteKit', 'TypeScript', 'OpenAI API', 'Vercel'] },
-		{ name: 'Image Upscaler', url: 'https://frontend-henna-eight-15.vercel.app/', description: 'Afbeeldingen opschalen met AI', updatedAt: '2026-05-06', tech: ['SvelteKit', 'TypeScript', 'AI Upscaling', 'Vercel'] },
-		{ name: 'SHIFT Game', url: 'https://shift-game-taupe.vercel.app', description: 'Geheugenspel met patronen op een glitchend raster', updatedAt: '2026-05-05', tech: ['SvelteKit', 'TypeScript', 'Canvas API', 'Vercel'] },
-		{ name: 'Vragen Agids', url: 'https://vragen-agids.vercel.app', description: 'Vragenlijst-app', updatedAt: '2026-04-22', tech: ['SvelteKit', 'TypeScript', 'Vercel'] },
+		{ name: 'AI Wegwijzer', url: 'https://ai-wegwijzer.vercel.app', description: 'Informatieplatform over kunstmatige intelligentie', updatedAt: '2026-04-12', tech: [
+			{ label: 'Framework', value: 'SvelteKit' },
+			{ label: 'Taal', value: 'TypeScript' },
+			{ label: 'AI', value: 'OpenAI API' },
+			{ label: 'Deployment', value: 'Vercel' },
+		] },
+		{ name: 'Baannana', url: 'https://baannana.vercel.app', description: 'Educatief platform voor docenten en trainers', updatedAt: '2026-05-03', tech: [
+			{ label: 'Framework', value: 'SvelteKit' },
+			{ label: 'Taal', value: 'TypeScript' },
+			{ label: 'Deployment', value: 'Vercel' },
+		] },
+		{ name: 'Babl', url: 'https://babl-xaviers-projects-f781c2fc.vercel.app', description: 'Conversatie-app', updatedAt: '2026-03-25', tech: [
+			{ label: 'Framework', value: 'SvelteKit' },
+			{ label: 'Taal', value: 'TypeScript' },
+			{ label: 'Deployment', value: 'Vercel' },
+		] },
+		{ name: 'Blink', url: 'https://blink-app-mu.vercel.app', description: 'Talentontdekkingsapp', updatedAt: '2026-02-28', tech: [
+			{ label: 'Framework', value: 'SvelteKit' },
+			{ label: 'Taal', value: 'TypeScript' },
+			{ label: 'Deployment', value: 'Vercel' },
+		] },
+		{ name: 'De Grote MS Quiz', url: 'https://ms-eight-olive.vercel.app', description: 'Experimenteel project', updatedAt: '2026-02-22', tech: [
+			{ label: 'Framework', value: 'SvelteKit' },
+			{ label: 'Taal', value: 'TypeScript' },
+			{ label: 'Deployment', value: 'Vercel' },
+		] },
+		{ name: 'PII Scrubber', url: 'https://pii-scrubber-wheat.vercel.app', description: 'Verwijdert persoonsgegevens uit teksten', updatedAt: '2026-04-16', tech: [
+			{ label: 'Framework', value: 'SvelteKit' },
+			{ label: 'Taal', value: 'TypeScript' },
+			{ label: 'Techniek', value: 'NLP' },
+			{ label: 'Deployment', value: 'Vercel' },
+		] },
+		{ name: 'Quacker', url: 'https://quacker-omega.vercel.app', description: 'Blogs, naslagwerken, cartoons en AI-tools', updatedAt: '2025-11-04', tech: [
+			{ label: 'Framework', value: 'SvelteKit' },
+			{ label: 'Taal', value: 'TypeScript' },
+			{ label: 'AI', value: 'OpenAI API' },
+			{ label: 'Deployment', value: 'Vercel' },
+		] },
+		{ name: 'Image Upscaler', url: 'https://frontend-henna-eight-15.vercel.app/', description: 'Afbeeldingen opschalen met AI', updatedAt: '2026-05-06', tech: [
+			{ label: 'Framework', value: 'SvelteKit' },
+			{ label: 'Taal', value: 'TypeScript' },
+			{ label: 'AI', value: 'AI Upscaling' },
+			{ label: 'Deployment', value: 'Vercel' },
+		] },
+		{ name: 'SHIFT Game', url: 'https://shift-game-taupe.vercel.app', description: 'Geheugenspel met patronen op een glitchend raster', updatedAt: '2026-05-05', tech: [
+			{ label: 'Framework', value: 'SvelteKit' },
+			{ label: 'Taal', value: 'TypeScript' },
+			{ label: 'Techniek', value: 'Canvas API' },
+			{ label: 'Deployment', value: 'Vercel' },
+		] },
+		{ name: 'Vragen Agids', url: 'https://vragen-agids.vercel.app', description: 'Vragenlijst-app', updatedAt: '2026-04-22', tech: [
+			{ label: 'Framework', value: 'SvelteKit' },
+			{ label: 'Taal', value: 'TypeScript' },
+			{ label: 'Deployment', value: 'Vercel' },
+		] },
 	];
 
 	let expanded = $state<string | null>(null);
@@ -114,8 +161,8 @@
 				{#if isOpen}
 					<div class="details">
 						<div class="tech-list">
-							{#each project.tech as tag}
-								<span class="tech-tag">{tag}</span>
+							{#each project.tech as item}
+								<span class="tech-tag"><span class="tech-label">{item.label}:</span> {item.value}</span>
 							{/each}
 						</div>
 						<a href={project.url} target="_blank" rel="noopener noreferrer" class="visit-link">
@@ -318,6 +365,11 @@
 		padding: 0.25rem 0.5rem;
 		border-radius: 4px;
 		background: var(--border);
+		color: var(--text);
+		font-weight: 400;
+	}
+
+	.tech-label {
 		color: var(--text-muted);
 		font-weight: 500;
 	}
